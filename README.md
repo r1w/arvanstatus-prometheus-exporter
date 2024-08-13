@@ -24,19 +24,19 @@ Linux (manual installation)
 
 Clone the repository:
 ```bash
-$ git clone https://github.com/r1w/arvanstatus-prometheus-exporter
+ git clone https://github.com/r1w/arvanstatus-prometheus-exporter
 ```
 Navigate into the directory:
 ```bash
-$ cd arvanstatus-prometheus-exporter
+ cd arvanstatus-prometheus-exporter
 ```
 Build the project:
 ```bash
-$ go build -o arvanstatus-exporter
+ go build -o arvanstatus-exporter
 ```
 Run the exporter:
 ```bash
-$ ./arvanstatus-exporter
+ ./arvanstatus-exporter
 ```
 
 Add to Prometheus configuration:
@@ -113,7 +113,7 @@ Command-line Flags
 
 Example:
 ```bash
-$ ./arvanstatus-exporter --port 9090 --interval 120s
+ ./arvanstatus-exporter --port 9090 --interval 120s
 ```
 
 Features
@@ -139,9 +139,9 @@ You can configure the exporter via command-line flags or environment variables:
 Example:
 
 ```bash
-$ export EXPORTER_PORT=9090
-$ export SCRAPE_INTERVAL=120s
-$ ./arvanstatus-exporter
+ export EXPORTER_PORT=9090
+ export SCRAPE_INTERVAL=120s
+ ./arvanstatus-exporter
 ```
 
 Contributing
@@ -167,7 +167,6 @@ License:
 
 Contact:
 ============
-    Your Name - Your Twitter Handle
-    Email: kurosch86@gmail.com
-    GitHub: https://github.com/r1w/
-    Linkedin: https://www.linkedin.com/in/hamid-hadigol/
+    [![Email] (kurosch86@gmail.com)
+    [![GitHub] (https://github.com/r1w/)
+    [![Linkedin] (https://www.linkedin.com/in/hamid-hadigol/ "Linkedin")
