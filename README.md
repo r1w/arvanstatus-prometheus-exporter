@@ -24,27 +24,19 @@ Steps
 
     Clone the repository:
 
-    bash
-
-git clone https://github.com/r1w/arvanstatus-prometheus-exporter
+    git clone https://github.com/r1w/arvanstatus-prometheus-exporter
 
 Navigate into the directory:
 
-bash
-
-cd arvanstatus-prometheus-exporter
+     cd arvanstatus-prometheus-exporter
 
 Build the project:
 
-bash
-
-go build -o arvanstatus-exporter
+    go build -o arvanstatus-exporter
 
 Run the exporter:
 
-bash
-
-./arvanstatus-exporter
+    ./arvanstatus-exporter
 
 Add to Prometheus configuration:
 
@@ -69,8 +61,50 @@ Example metrics include:
 
 plaintext
 
-arvan_service_status{name="cdn"} 1
-arvan_service_status{name="dns"} 0
+    arvan_services_status{category="APIs",service="CDN"} 1
+    arvan_services_status{category="APIs",service="Cloud Server"} 1
+    arvan_services_status{category="APIs",service="Container Service"} 1
+    arvan_services_status{category="APIs",service="Edge Computing"} 1
+    arvan_services_status{category="APIs",service="Live Streaming"} 1
+    arvan_services_status{category="APIs",service="Object Storage"} 1
+    arvan_services_status{category="APIs",service="Panel (Middleware)"} 1
+    arvan_services_status{category="APIs",service="Video Advertising"} 1
+    arvan_services_status{category="APIs",service="Video on-demand Service"} 1
+    arvan_services_status{category="CDN",service="CDN"} 1
+    arvan_services_status{category="CDN",service="Cloud Security"} 1
+    arvan_services_status{category="CDN",service="DNS"} 1
+    arvan_services_status{category="CDN PoP-Sites",service="Asia"} 1
+    arvan_services_status{category="CDN PoP-Sites",service="Europe"} 1
+    arvan_services_status{category="CDN PoP-Sites",service="Iran"} 1
+    arvan_services_status{category="CDN PoP-Sites",service="North America"} 1
+    arvan_services_status{category="Cloud Server",service="Bamdad (Iran-TehranWest)"} 1
+    arvan_services_status{category="Cloud Server",service="Forough (Iran-TehranCentral 2)"} 1
+    arvan_services_status{category="Cloud Server",service="Shahriar (Iran-Tabriz)"} 1
+    arvan_services_status{category="Cloud Server",service="Simin (Iran-TehranCentral 1)"} 1
+    arvan_services_status{category="Container Service",service="Bamdad (Iran-TehranWest)"} 1
+    arvan_services_status{category="Container Service",service="Shahriar (Iran-Tabriz)"} 1
+    arvan_services_status{category="Managed Database",service="Automatic Failover"} 1
+    arvan_services_status{category="Managed Database",service="Automatic Recovery"} 1
+    arvan_services_status{category="Managed Database",service="Backup"} 1
+    arvan_services_status{category="Managed Database",service="Bamdad"} 1
+    arvan_services_status{category="Managed Database",service="MySQL"} 1
+    arvan_services_status{category="Managed Database",service="Panel"} 1
+    arvan_services_status{category="Managed Database",service="Shahriar (Iran-Tabriz)"} 1
+    arvan_services_status{category="Object Storage",service="Shahriar (Iran-Tabriz)"} 1
+    arvan_services_status{category="Object Storage",service="Simin (Iran-TehranCentral 1)"} 1
+    arvan_services_status{category="Service",service="Radar"} 1
+    arvan_services_status{category="Service",service="Website"} 1
+    arvan_services_status{category="Support",service="Forum"} 1
+    arvan_services_status{category="Support",service="Telephone"} 1
+    arvan_services_status{category="Support",service="Ticketing"} 1
+    arvan_services_status{category="Video Platform",service="Audio on-demand Service"} 1
+    arvan_services_status{category="Video Platform",service="Live Streaming"} 1
+    arvan_services_status{category="Video Platform",service="Video Ads"} 1
+    arvan_services_status{category="Video Platform",service="Video Player"} 1
+    arvan_services_status{category="Video Platform",service="Video on-demand Service"} 1
+
+
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
 
 Command-line Flags
 
@@ -79,9 +113,7 @@ Command-line Flags
 
 Example:
 
-bash
-
-./arvanstatus-exporter --port 9090 --interval 120s
+    ./arvanstatus-exporter --port 9090 --interval 120s
 
 Features
 
@@ -103,11 +135,9 @@ You can configure the exporter via command-line flags or environment variables:
 
 Example:
 
-bash
-
-export EXPORTER_PORT=9090
-export SCRAPE_INTERVAL=120s
-./arvanstatus-exporter
+    export EXPORTER_PORT=9090
+    export SCRAPE_INTERVAL=120s
+    ./arvanstatus-exporter
 
 Contributing
 
