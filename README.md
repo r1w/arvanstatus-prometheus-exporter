@@ -167,6 +167,6 @@ License:
 
 Contact:
 ============
-    [![Email] (kurosch86@gmail.com)
-    [![GitHub] (https://github.com/r1w/)
-    [![Linkedin] (https://www.linkedin.com/in/hamid-hadigol/ "Linkedin")
+[![Email] (kurosch86@gmail.com)
+[![GitHub] (https://github.com/r1w/)
+[![Linkedin] (https://www.linkedin.com/in/hamid-hadigol/)
