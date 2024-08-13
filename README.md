@@ -151,11 +151,11 @@ We welcome contributions to improve this project.
 
 To contribute:
 
-    Fork the repository
-    Create a new branch (git checkout -b feature-branch)
-    Make your changes and commit them (git commit -m 'Add some feature')
-    Push to the branch (git push origin feature-branch)
-    Open a Pull Request
+1. Fork the repository
+2. Create a new branch (git checkout -b feature-branch)
+3. Make your changes and commit them (git commit -m 'Add some feature')
+4. Push to the branch (git push origin feature-branch)
+5. Open a Pull Request
 
 > [!IMPORTANT]
 > Please follow the coding style and standards outlined in the repository.
@@ -165,8 +165,9 @@ License:
 
  This project is licensed under the MIT License - see the LICENSE file for details.
 
-Contact:
+Contact info:
 ============
-[![Email] (kurosch86@gmail.com)
-[![GitHub] (https://github.com/r1w/)
-[![Linkedin] (https://www.linkedin.com/in/hamid-hadigol/)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hamid-hadigol/)  
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:kurosch86@gmail.com)  
+[![GitHub](https://img.shields.io/badge/GitHub-333?style=flat&logo=github&logoColor=white)](https://github.com/r1w/)
