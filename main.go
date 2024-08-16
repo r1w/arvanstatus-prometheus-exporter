@@ -106,7 +106,7 @@ func main() {
 	// Start HTTP server for Prometheus to scrape
 	http.Handle("/metrics", promhttp.Handler())
 	go func() {
-		log.Fatal(http.ListenAndServe(":8000", nil))
+		log.Fatal(http.ListenAndServe("0.0.0.0:8002", nil))
 	}()
 
 	// Periodically fetch status
