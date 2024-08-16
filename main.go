@@ -2,37 +2,13 @@ package main
 
 import (
 	"github.com/PuerkitoBio/goquery"
-	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"log"
+	"metrics/metrics" // Replace with the correct import path
 	"net/http"
 	"strings"
 	"time"
 )
-
-var (
-	// Define a global map to hold metrics
-	serviceMetrics = map[string]map[string]prometheus.Gauge{}
-)
-
-func initPrometheusMetrics(categories map[string]map[string]string) {
-	for category, services := range categories {
-		if _, exists := serviceMetrics[category]; !exists {
-			serviceMetrics[category] = make(map[string]prometheus.Gauge)
-		}
-		for serviceName := range services {
-			// Create a metric if it doesn't exist already
-			if _, exists := serviceMetrics[category][serviceName]; !exists {
-				serviceMetrics[category][serviceName] = prometheus.NewGauge(prometheus.GaugeOpts{
-					Name:        "arvan_services_status",
-					Help:        "arvan services status.",
-					ConstLabels: prometheus.Labels{"category": category, "service": serviceName},
-				})
-				prometheus.MustRegister(serviceMetrics[category][serviceName])
-			}
-		}
-	}
-}
 
 func fetchStatus() {
 	url := "https://www.arvancloudstatus.ir/"
@@ -83,23 +59,8 @@ func fetchStatus() {
 			services[categoryName] = categoryStatus
 		}
 	})
-	initPrometheusMetrics(categories)
-	updatePrometheusMetrics(categories)
-	//log.Println(categories)
-}
-
-func updatePrometheusMetrics(categories map[string]map[string]string) {
-	for category, services := range categories {
-		for serviceName, status := range services {
-			if gauge, exists := serviceMetrics[category][serviceName]; exists {
-				if status == "Operational" {
-					gauge.Set(1)
-				} else if status == "Error" {
-					gauge.Set(0)
-				}
-			}
-		}
-	}
+	metrics.InitPrometheusMetrics(categories)
+	metrics.UpdatePrometheusMetrics(categories)
 }
 
 func main() {
