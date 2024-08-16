@@ -47,7 +47,7 @@ Add the following job to your Prometheus `prometheus.yml` configuration file:
 scrape_configs:
   - job_name: 'arvanstatus'
     static_configs:
-      - targets: ['172.19.0.1:8001']
+      - targets: ['0.0.0.0:8002']
         labels:
           container: 'incident_status'
 ```
