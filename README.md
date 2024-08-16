@@ -43,13 +43,14 @@ Add to Prometheus configuration:
 
 Add the following job to your Prometheus `prometheus.yml` configuration file:
 
-yaml
   ```yaml
-    scrape_configs:
-      - job_name: 'arvanstatus'
-        static_configs:
-          - targets: ['localhost:your_exporter_port']
-  ```
+scrape_configs:
+  - job_name: 'arvanstatus'
+    static_configs:
+      - targets: ['172.19.0.1:8001']
+        labels:
+          container: 'incident_status'
+      ```
 
 Restart Prometheus:
 
@@ -59,7 +60,7 @@ Usage
 ============
 Once the exporter is running, Prometheus will start scraping metrics from it. The exporter listens on a specific port (default: :8080) and exposes metrics that include the status of various ArvanCloud services.
 
-Example metrics include:
+Example metrics includes:
 
 ```
     arvan_services_status{category="APIs",service="CDN"} 1
