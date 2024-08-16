@@ -50,7 +50,7 @@ scrape_configs:
       - targets: ['172.19.0.1:8001']
         labels:
           container: 'incident_status'
-      ```
+```
 
 Restart Prometheus:
 
