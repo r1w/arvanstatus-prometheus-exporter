@@ -1,13 +1,11 @@
 package main
 
 import (
+	"cloud_server_status/metrics"
 	"github.com/PuerkitoBio/goquery"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"log"
-	"metrics/metrics" // Replace with the correct import path
 	"net/http"
 	"strings"
-	"time"
 )
 
 func fetchStatus() {
@@ -61,20 +59,4 @@ func fetchStatus() {
 	})
 	metrics.InitPrometheusMetrics(categories)
 	metrics.UpdatePrometheusMetrics(categories)
-}
-
-func main() {
-	// Start HTTP server for Prometheus to scrape
-	http.Handle("/metrics", promhttp.Handler())
-	go func() {
-		log.Fatal(http.ListenAndServe("0.0.0.0:8002", nil))
-	}()
-
-	// Periodically fetch status
-	for {
-		log.Println("Starting fetchStatus function...")
-		fetchStatus()
-		log.Println("Completed fetchStatus function.")
-		time.Sleep(60 * time.Second)
-	}
 }
