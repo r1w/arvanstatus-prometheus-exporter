@@ -1,11 +1,10 @@
 package server
 
 import (
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"log"
 	"net/http"
 	"time"
-
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 // StartServer initializes the HTTP server for Prometheus metrics and starts the periodic status fetch
