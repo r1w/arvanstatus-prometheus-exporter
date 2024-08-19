@@ -145,6 +145,22 @@ Example:
  ./arvanstatus-exporter
 ```
 
+## Building and Running the Docker Image
+
+### Build the Image
+
+To build the Docker image, run the following command:
+
+```bash
+docker build -t arvanstatus/arvanstatus:1.0.0 .
+```
+Run the Container
+
+To run the Docker container with a custom name and port, use the following command:
+
+```bash
+docker run --name arvanstatus -p 8002:8002 arvanstatus/arvanstatus:1.0.0
+```
 Contributing
 ============
 
