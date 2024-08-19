@@ -109,12 +109,12 @@ Example metrics includes:
 
 Command-line Flags
 
-    --port: Specify the port on which the exporter listens (default: 8080).
+    --port: Specify the port on which the exporter listens (default: 8002).
     --interval: Set the scrape interval for fetching ArvanCloud status (default: 60s).
 
 Example:
 ```bash
- ./arvanstatus-exporter --port 9090 --interval 120s
+ ./arvanstatus-exporter --port 8002 --interval 120s
 ```
 
 Features
